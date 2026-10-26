@@ -1,0 +1,165 @@
+# ============================================================
+#  ricefish · 主配置
+#  修改后重启生效；标了 [热加载] 的可以在 Web 面板里改，立即生效。
+# ============================================================
+
+bot:
+  name: "肥鱼"                       # 机器人自称
+  aliases: ["肥鱼", "大鱼", "鱼鱼", "鲸鱼娘", "鲸鲸", "小鲸鱼"]  # 叫这些名字也算 @ 它
+  owner_qq: 0                       # 主人 QQ（唯一的超级管理员）；一键启动脚本会写进 .env
+  owner_name: ""                    # 主人的显示名，会写进提示词的【关系】块；留空显示「主人」
+  admin_qqs: []                     # 可以用管理命令的 QQ
+  mode: active                      # active=正常 / passive=只回不主动 / readonly=只在面板看
+  dry_run: true                     # true=只写日志不真发（调试期务必开着！）[热加载]
+  timezone: "Asia/Shanghai"
+
+onebot:
+  host: "127.0.0.1"                 # 只监听本机，别暴露到公网
+  port: 8080
+  path: "/onebot/v11/ws"
+  token: ""                         # 与 NapCat 反向WS 的 token 保持一致；留空=不校验
+
+access:
+  # 空列表 = 谁都不理。加群/好友后把号码填进来，这是最重要的安全阀。
+  allowed_groups: []
+  allowed_friends: []
+  blocked_users: []
+
+trigger:
+  group:
+    at_or_reply: true               # @机器人 或 回复机器人消息 -> 必回
+    keywords: []                    # 额外的唤醒词，命中必回
+    reply_to_other_bot: false       # 别的机器人说话要不要接
+  private:
+    always_reply: true              # 私聊默认每条都回
+  proactive:
+    enabled: true                   # 群聊主动插话总开关 [热加载]
+    probability: 0.15               # 每条群消息评估一次，命中概率才可能插话
+    min_interval_sec: 600           # 同群两次主动插话最小间隔（秒）
+    daily_quota: 20                 # 同群每天主动插话上限
+    relevance_threshold: 0.6        # 相关性判定阈值（0~1）
+
+send:
+  typing_ms_per_char: 45            # 打字延迟：每个字多少毫秒
+  typing_min_ms: 500
+  typing_max_ms: 3000
+  jitter: 0.25                      # 延迟随机抖动比例 ±25%
+  max_segments: 3                   # 一条回复最多拆几条
+  segment_max_chars: 120            # 每段最长字数
+  segment_gap_ms: [250, 700]        # 分条之间的间隔范围
+  quote_reply: true                 # 回复时引用对方消息
+  auto_emoji_probability: 0.12      # 回复完顺手补一张群友表情的概率（0=关）
+  auto_emoji_cooldown_sec: 300      # 同一会话两次自动表情的最小间隔
+
+rate_limit:
+  group_per_min: 5                  # 每群每分钟最多发几条
+  group_per_day: 400                # 每群每天最多发几条
+  user_per_hour: 0                  # 0 = 不限制单个用户（每群每日上限仍然生效）
+  duplicate_window_sec: 300         # 相同内容多久内不重发
+  quiet_hours: "00:30-07:30"        # 静默时段
+  quiet_group_proactive: true       # 静默时段不在群里主动说话
+  quiet_private_passive: true       # 静默时段私聊仍然被动回复
+
+memory:
+  window_messages: 40               # 短期记忆：携带最近多少条原文
+  window_tokens: 6000               # 短期记忆的 token 上限（估算）
+  summary_every_messages: 30        # 每多少条消息生成一次滚动摘要
+  summary_idle_minutes: 15          # 或者静默多少分钟后补一次摘要
+  retrieve_top_k: 8                 # 长期记忆召回条数
+  retrieve_max_chars: 200           # 注入 prompt 的长期记忆压缩后长度
+  embedding: off                    # off=只用关键词；ollama=叠加本地语义检索
+  embedding_model: "bge-m3"
+  embedding_url: "http://127.0.0.1:11434"
+  extractor:
+    enabled: true
+    every_messages: 20              # 每多少条消息跑一次抽取
+    idle_minutes: 3                 # 或静默多少分钟后补跑
+    daily_budget_per_chat: 100      # 每个会话每天最多抽多少次（省钱）
+    model: fast
+
+llm:
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-flash"
+  pro_model: "deepseek-v4-pro"
+  vision_model: "deepseek-flash"
+  temperature: 1.1                  # 高一点更有人味
+  max_output_tokens: 800
+  timeout_sec: 30
+  retries: 1
+  # enabled = 开思考链：回答更有条理，代价是慢 2~3 倍（流式下首字仍会快）
+  thinking: "enabled"
+  # 视觉/抽取/摘要这类工具任务默认关思考：否则 reasoning 会把输出 token 吃光
+  thinking_vision: "disabled"
+  thinking_utility: "disabled"
+  vision_max_tokens: 700
+  stream: true                      # 流式：先生成先发，首字更快
+  stream_min_chars: 8               # 缓冲到多少字才按句切分发送
+  stream_max_buffer: 60             # 缓冲上限，超过就强制切
+  stream_min_visible_chars: 10      # 可见字数达到多少才真的发（过滤"……"碎片）
+  stream_max_messages: 2            # 一轮最多拆几条
+  stream_chunk_gap_ms: [250, 600]   # 两条之间的停顿，模拟打字
+  # 首字慢时先给信号：reaction=给消息加表情回应，text=发短句再撤回，off=不发
+  stream_ack_mode: "reaction"
+  stream_ack_after_sec: 7
+  stream_ack_emoji_id: "128531"     # 🤔，NapCat 不支持时自动忽略
+  stream_ack_texts: ["等下，我想想", "这个我得想一下", "嗯…让我捋捋"]
+  stream_first_token_timeout_sec: 15
+  # >0 时首 token 太慢先发一句「想了 N 秒…」；0=关（默认靠表情回应/短确认）
+  stream_slow_note_sec: 0
+  stream_slow_note_template: "想了 {sec} 秒…"
+
+web:
+  enabled: true
+  host: "127.0.0.1"
+  port: 8721
+  token: ""                         # 留空则自动生成并打印到控制台
+
+care:
+  enabled: false                    # 久未联系主动私聊关怀（默认关，小心变成骚扰）
+  idle_days: 3
+  cooldown_days: 7
+  max_per_day: 5
+
+# 主动陪伴：私聊隔一阵接一句；总开关在面板「设置 → 主动陪伴」，每个会话也能单独关。
+companion:
+  enabled: true                     # 私聊主动陪伴；不需要可以在面板「设置 → 主动陪伴」关掉
+  idle_minutes: 60                  # 最后一条是对方发的，1 小时没动静可以找
+  follow_up_minutes: 30             # 最后一条是机器人发的，30 分钟后可以补一句
+  cooldown_minutes: 90              # 同一会话两次主动至少隔 1.5 小时
+  daily_per_chat: 5                 # 每个会话每天最多 5 次
+  daily_total: 30                   # 所有会话每天合计上限
+  respect_quiet_hours: true         # 静默时段不主动
+  max_per_tick: 1                   # 每分钟最多发 1 条，避免同时轰炸
+
+concurrency:
+  max_parallel: 6                   # 同时生成回复的会话数上限（群聊+私聊一起算）
+  max_queue: 24                     # 超出的最多排这么多，再超就丢弃
+  acquire_timeout_sec: 60           # 排队最多等多久
+
+tools:
+  weather: true                     # 天气（wttr.in，不需要 key）
+  vision: true                      # 看得懂别人发的图（用 deepseek-flash 的视觉）
+  vision_max_images: 4              # 一轮最多理解几张图
+  vision_timeout_sec: 15            # 拉取图片的超时
+  vision_ocr: true                  # 尝试用 NapCat 的 ocr_image 先读字
+  sticker_autotag: true             # 新收的图自动让视觉打情绪/标签（后台跑）
+  enable_calls: true                # 允许模型自己调用工具（天气/时间/搜索）
+  search_key: ""                    # 联网搜索的 API Key（Tavily），留空=关闭
+  tts_command: ""                   # 语音回复命令模板，见 README；留空=用内置 edge-tts
+  tts_voice: "zh-CN-XiaoyiNeural"   # 晓伊：和 aceice 语音包同一个音色，更软更幼
+  tts_rate: "+6%"                   # 语速，+10% 更活泼，-5% 更慵懒
+  tts_pitch: "+10Hz"                # 音调，+20Hz 更奶，-10Hz 更御
+  tts_expressiveness: 0.7           # 语气起伏 0~1：疑问抬高、感叹加快、省略放慢
+  asr_command: ""                   # 语音转文字命令模板，见 README
+  voice_pack: "assets/voices,data/voice-packs/aceice"  # 可逗号分隔多个；后者需手动导入，不存在会自动跳过
+  poke_voice_probability: 0.6       # 被戳一戳时用语音包回的概率，0=只用文字，1=只发语音
+  meme_pack: "assets/memes"         # 梗图包目录，空字符串=关闭 /梗图
+  meme_cooldown_sec: 30             # 同一会话两次 /梗图 的最小间隔（秒）
+
+games:
+  enabled: true
+  daily_limit: 12                   # 每群每天最多开这么多局
+
+plugins:
+  enabled: true
+  dir: "plugins"

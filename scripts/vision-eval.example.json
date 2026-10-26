@@ -1,0 +1,17 @@
+[
+  {
+    "path": "assets/emoji/happy.png",
+    "expect": ["开心", "笑"],
+    "kind": "meme"
+  },
+  {
+    "path": "assets/emoji/cry.png",
+    "expect": ["哭", "难过"],
+    "kind": "meme"
+  },
+  {
+    "path": "assets/memes/007.png",
+    "expect": ["鲸", "鱼", "梗"],
+    "kind": "meme"
+  }
+]

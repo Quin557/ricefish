@@ -1,0 +1,52 @@
+# 运行时数据：消息、记忆、日志、图片，全部本地
+data/
+
+# 一键安装脚本下载的第三方程序（NapCat 等），不进仓库
+vendor/
+*.zip.tmp
+setup.log
+
+# 密钥
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 临时
+*.log
+debug.log
+tmp/
+.tmp/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# SQLite 边车文件
+*.db-wal
+*.db-shm
+
+# 本地登录二维码（可能含账号信息，不提交）
+qr-now.png
+
+# 个人本地文件：保留在磁盘上，但不上传
+# bot.personal.yaml / global.personal.md 是修改前的个人版本备份，仅供留档。
+config/bot.personal.yaml
+config/personas/global.personal.md
+config/personas/learned.md
+config/personas/private/
+# 真实群文件按群号命名，只保留 example.md 作为模板
+config/personas/groups/*.md
+!config/personas/groups/example.md

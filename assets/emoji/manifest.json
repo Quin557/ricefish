@@ -1,0 +1,166 @@
+{
+  "items": [
+    {
+      "name": "开心",
+      "slug": "happy",
+      "file": "assets/emoji/happy.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C10",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C10.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "微笑",
+      "slug": "smile",
+      "file": "assets/emoji/smile.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C12",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C12.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "害羞",
+      "slug": "shy",
+      "file": "assets/emoji/shy.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "P2",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/P2.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "炸毛",
+      "slug": "angry",
+      "file": "assets/emoji/angry.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C15",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C15.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "震惊",
+      "slug": "shock",
+      "file": "assets/emoji/shock.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C17",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C17.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "眨眼",
+      "slug": "wink",
+      "file": "assets/emoji/wink.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C19",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C19.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "比心",
+      "slug": "heart",
+      "file": "assets/emoji/heart.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C50",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C50.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "赞",
+      "slug": "like",
+      "file": "assets/emoji/like.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C51",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C51.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "问号",
+      "slug": "question",
+      "file": "assets/emoji/question.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C52",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C52.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "招手",
+      "slug": "wave",
+      "file": "assets/emoji/wave.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C23",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C23.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "睡觉",
+      "slug": "sleep",
+      "file": "assets/emoji/sleep.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C78",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C78.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "哭",
+      "slug": "cry",
+      "file": "assets/emoji/cry.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C80",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C80.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "得意",
+      "slug": "smug",
+      "file": "assets/emoji/smug.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C82",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C82.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "吃醋",
+      "slug": "jealous",
+      "file": "assets/emoji/jealous.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C84",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C84.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "冲",
+      "slug": "rush",
+      "file": "assets/emoji/rush.png",
+      "origin": "AATINF/deepseek-whale-girl-assets",
+      "source_id": "C90",
+      "source_url": "https://raw.githubusercontent.com/AATINF/deepseek-whale-girl-assets/a7e58d261885e12a7652d4677e1412edbab557e8/share-1600/C90.jpg",
+      "license": "社区素材扩展包（无 SPDX；角色参考 TreapGoGo MIT）"
+    },
+    {
+      "name": "无语",
+      "slug": "speechless",
+      "file": "assets/emoji/speechless.png",
+      "origin": "pokerface-1224/deepseek-whale-girl-pet",
+      "source_id": "bored",
+      "source_url": "https://raw.githubusercontent.com/pokerface-1224/deepseek-whale-girl-pet/c7a0a01b80c5826b1a8a7829d943db6adc7d5a4b/desktop-pet/art/bored.png",
+      "license": "美术 CC BY-NC-SA 4.0"
+    },
+    {
+      "name": "吃饭",
+      "slug": "eat",
+      "file": "assets/emoji/eat.png",
+      "origin": "pokerface-1224/deepseek-whale-girl-pet",
+      "source_id": "eating",
+      "source_url": "https://raw.githubusercontent.com/pokerface-1224/deepseek-whale-girl-pet/c7a0a01b80c5826b1a8a7829d943db6adc7d5a4b/desktop-pet/art/eating.png",
+      "license": "美术 CC BY-NC-SA 4.0"
+    },
+    {
+      "name": "摸鱼",
+      "slug": "slack",
+      "file": "assets/emoji/slack.png",
+      "origin": "pokerface-1224/deepseek-whale-girl-pet",
+      "source_id": "slacking",
+      "source_url": "https://raw.githubusercontent.com/pokerface-1224/deepseek-whale-girl-pet/c7a0a01b80c5826b1a8a7829d943db6adc7d5a4b/desktop-pet/art/slacking.png",
+      "license": "美术 CC BY-NC-SA 4.0"
+    }
+  ]
+}

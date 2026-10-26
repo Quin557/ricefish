@@ -1,0 +1,27 @@
+# 表情包映射：模型输出 [表情:名字] 时，发对应的图片
+# 路径相对项目根目录；文件不存在会被自动忽略。
+#
+# 图片来自上游开源素材库，由 scripts/fetch_assets.py 下载并裁剪：
+#   大部分为 AATINF/deepseek-whale-girl-assets（社区素材扩展包）
+#   无语 / 吃饭 / 摸鱼 为 pokerface-1224/deepseek-whale-girl-pet（CC BY-NC-SA 4.0）
+# 详细来源、commit 与许可见 assets/emoji/manifest.json 和 assets/SOURCES.json。
+
+开心: "assets/emoji/happy.png"
+微笑: "assets/emoji/smile.png"
+害羞: "assets/emoji/shy.png"
+炸毛: "assets/emoji/angry.png"
+震惊: "assets/emoji/shock.png"
+眨眼: "assets/emoji/wink.png"
+比心: "assets/emoji/heart.png"
+赞: "assets/emoji/like.png"
+问号: "assets/emoji/question.png"
+招手: "assets/emoji/wave.png"
+睡觉: "assets/emoji/sleep.png"
+哭: "assets/emoji/cry.png"
+得意: "assets/emoji/smug.png"
+吃醋: "assets/emoji/jealous.png"
+冲: "assets/emoji/rush.png"
+吃饭: "assets/emoji/eat.png"
+摸鱼: "assets/emoji/slack.png"
+困饿: "assets/emoji/困饿.png"
+无语: "assets/emoji/无语.png"

@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build release zip
+        run: python scripts/build_release.py
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.zip
+            dist/*.zip.sha256
+          generate_release_notes: true
+          body: |
+            ricefish ${{ github.ref_name }} 发行包。
+
+            **下载**：`ricefish-${{ github.ref_name }}.zip`，解压到纯英文路径
+            （例如 `D:\ricefish`），然后双击 `start.bat`。
+
+            发行包不是免安装绿色版：第一次运行仍由 `start.bat` 检查 Python、
+            下载 NapCat、填写配置并用手机 QQ 小号扫码。NapCat/QQ 不随包分发。
+
+            详细步骤见仓库 README 的「零基础安装」。

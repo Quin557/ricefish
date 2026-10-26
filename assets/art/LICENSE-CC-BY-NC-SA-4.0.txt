@@ -1,0 +1,22 @@
+CC BY-NC-SA 4.0 · 图标素材许可说明
+====================================
+
+本目录图标来自 fornarwhal/deepseek-whale-girl-icon：
+https://github.com/fornarwhal/deepseek-whale-girl-icon
+固定 commit: bc2ac790e6f6a0cbc88879c56383b6f08ed3ef83
+
+许可：Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+（CC BY-NC-SA 4.0）
+全文：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+署名：
+- 角色形象来源：上善无形（原创 OC「溟月」）
+- DeepSeek 元素二创：ZipZipPipe（GPT Image 2）
+- 改进版修复：QYQCAMIAO
+- 图标仓库：fornarwhal
+
+你可以：在非商业前提下复制、传播、修改，但必须署名、注明许可，
+并以相同协议分享修改后的版本。不得用于商业目的。
+
+上游 README 说明图片来自网络流传，具体作者未完全确认；
+如原作者认为不妥，请联系删除。

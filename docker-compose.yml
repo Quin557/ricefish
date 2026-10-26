@@ -1,0 +1,29 @@
+services:
+  bot:
+    build: .
+    image: ricefish:local
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      RICEFISH_WEB_HOST: "0.0.0.0"
+      RICEFISH_DB: "/app/data/bot.db"
+    ports:
+      - "8721:8721"   # 管理面板（建议前面加 Caddy/Nginx + HTTPS + 认证）
+      - "8080:8080"   # NapCat 反向 WS 连这里；只在内网/隧道里暴露
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8721/healthz', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    # NapCat 不放在这个 compose 里：它需要 QQ 客户端和图形环境。
+    # 常见做法：NapCat 跑在 Windows/另一台机器，反向 WS 指向本机 8080；
+    # 或另起 Linux + Xvfb 的 NapCat 容器，具体见 docs/DEPLOY.md。

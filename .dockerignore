@@ -1,0 +1,16 @@
+.git
+.github
+data
+vendor
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.ruff_cache
+.tmp
+*.log
+.env
+qr-now.png
+dist
+build
+*.egg-info

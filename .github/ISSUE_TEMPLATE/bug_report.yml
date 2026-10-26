@@ -1,0 +1,35 @@
+name: Bug 报告
+description: 某个功能不对/报错
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 贴日志时请先去掉 API Key、token、QQ 号和聊天原文
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望什么
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本/commit
+      placeholder: v0.3.0 或 commit hash
+  - type: dropdown
+    id: env
+    attributes:
+      label: 运行方式
+      options:
+        - Windows 直接运行
+        - Docker
+        - 其他
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志/配置（脱敏）
+      render: text

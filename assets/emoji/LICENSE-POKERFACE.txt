@@ -1,0 +1,17 @@
+CC BY-NC-SA 4.0 · pokerface 立绘许可说明
+========================================
+
+本目录的 `speechless.png`（bored）、`eat.png`（eating）、`slack.png`（slacking）
+来自 pokerface-1224/deepseek-whale-girl-pet：
+https://github.com/pokerface-1224/deepseek-whale-girl-pet
+固定 commit: c7a0a01b80c5826b1a8a7829d943db6adc7d5a4b
+
+美术许可：CC BY-NC-SA 4.0
+全文：https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+署名：
+- 角色原作者：上善
+- 二次设计 / 立绘制作：zipzippipe
+- 项目维护：pokerface-1224
+
+非商业使用；修改后公开发布需以相同协议分享并保留署名。

@@ -1,0 +1,15 @@
+# 本项目默认只用 Python 3.10+ 标准库，不装任何包也能跑。
+#
+#   python run.py --check
+#
+# 如果你习惯用 venv：
+#   python -m venv .venv
+#   .venv\Scripts\activate
+#   python run.py
+#
+# 可选依赖（都不装也能跑，只是少点功能）：
+#   PyYAML>=6.0    用标准解析器读 config/*.yaml；不装就用内置的极简解析器
+#   edge-tts>=7.0  实时语音合成（/语音、[语音:文本]）；setup.ps1 会自动尝试安装
+#
+# PyYAML>=6.0
+# edge-tts>=7.0

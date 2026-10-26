@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ricefish"
+version = "0.3.0"
+description = "ricefish · 一条住在 QQ 里的白饭鱼：本地运行的 AI 群聊/私聊机器人"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ricefish contributors" }]
+keywords = ["qq", "bot", "onebot", "napcat", "deepseek", "llm", "chatbot"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Communications :: Chat",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# 可选：装了就用它解析 YAML（不装也能跑，用内置子集解析器）
+yaml = ["PyYAML>=6.0"]
+# 可选：实时语音合成（不装只是没语音，聊天照常）
+voice = ["edge-tts>=7.0"]
+# 开发/CI 工具；运行时不依赖
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "coverage>=7.0",
+]
+
+[project.scripts]
+ricefish = "ricefish.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Quin557/ricefish"
+Repository = "https://github.com/Quin557/ricefish"
+Issues = "https://github.com/Quin557/ricefish/issues"
+Changelog = "https://github.com/Quin557/ricefish/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ricefish = ["memory/*.sql", "web/static/*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+exclude = [".git", "data", "vendor", ".tmp", "__pycache__"]
+
+[tool.ruff.lint]
+# 先只在 CI 卡住语法/未定义名这类硬错误；格式和风格逐步收紧
+select = ["E9", "F63", "F7", "F82"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+check_untyped_defs = false
+exclude = ["vendor", "data", "tests"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
