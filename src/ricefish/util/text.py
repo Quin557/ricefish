@@ -4,9 +4,13 @@ from __future__ import annotations
 
 import re
 from datetime import datetime, timedelta, timezone
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-CST = ZoneInfo("Asia/Shanghai")
+try:
+    CST = ZoneInfo("Asia/Shanghai")
+except ZoneInfoNotFoundError:  # pragma: no cover - Windows/精简 Python 可能没有 tzdata
+    # 中国自 1991 年起不再使用夏令时，固定 UTC+8 与 Asia/Shanghai 等价。
+    CST = timezone(timedelta(hours=8))
 
 _SENTENCE_END = "。！？!?…~～\n"
 _SENTENCE_END_WITH_QUOTE = ("。”", "！”", "？”", "……")

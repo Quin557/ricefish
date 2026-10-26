@@ -125,7 +125,7 @@ NapCat 走的是 QQ 客户端协议，不是官方机器人接口。所有这类
 在「Assets」里下载：
 
 ```text
-ricefish-v0.3.0.zip
+ricefish-v0.3.1.zip
 ```
 
 不要点绿色的 `Code` 按钮下载源码（也能用，但不会带 `使用说明.txt`，而且容易下错分支）。
@@ -150,7 +150,7 @@ src\
 assets\
 ```
 
-如果看到的是 `ricefish-v0.3.0\ricefish-v0.3.0\start.bat` 这种套了两层，
+如果看到的是 `ricefish-v0.3.1\ricefish-v0.3.1\start.bat` 这种套了两层，
 把里面那层文件夹整个移到 `D:\ricefish`，保证 `start.bat` 就在 `D:\ricefish` 下。
 
 ### 第 3 步：双击 start.bat

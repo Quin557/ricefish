@@ -1,5 +1,13 @@
 # 更新日志
 
+## 0.3.1（2026-10-26）
+
+### 修复
+
+- Windows 精简版 Python 没有 IANA `tzdata` 时，自动回退到固定 UTC+8，
+  避免启动时 `ZoneInfoNotFoundError: Asia/Shanghai`。
+- 补上 Windows CI 的验证，确保一键脚本在干净 Python 环境可用。
+
 ## 0.3.0（2026-10-26）
 
 ### 开源

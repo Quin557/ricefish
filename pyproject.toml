@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ricefish"
-version = "0.3.0"
+version = "0.3.1"
 description = "ricefish · 一条住在 QQ 里的白饭鱼：本地运行的 AI 群聊/私聊机器人"
 readme = "README.md"
 requires-python = ">=3.10"
